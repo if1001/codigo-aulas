@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+    <Button
+        android:id="@+id/btn_ListActivity"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="ListActivity sem Layout" />
+    <Button
+        android:id="@+id/btn_ListActivityLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="ListActivity com Layout" />
+    <Button
+        android:id="@+id/btn_ListView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="ListView" />
+    <Button
+        android:id="@+id/btn_Spinner"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Spinner" />
+    <Button
+        android:id="@+id/btn_GridView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="GridView" />
+    <Button
+        android:id="@+id/btn_AutoCompleteTextView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="AutoCompleteTextView" />
+    <Button
+        android:id="@+id/btn_CustomAdapter"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Adapter Personalizado" />
+    <Button
+        android:id="@+id/btn_ViewHolder"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="ViewHolder" />
+</LinearLayout>
+
