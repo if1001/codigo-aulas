@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+      xmlns:adapt="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/adicionar"
+        android:icon="@drawable/ic_add_black_24dp"
+        android:title="@string/adicionar"
+        adapt:showAsAction="always" />
+
+    <item
+        android:id="@+id/zerar"
+        android:icon="@drawable/ic_refresh_black_24dp"
+        adapt:showAsAction="ifRoom"
+        android:title="@string/zerar" />
+
+    <item
+        android:id="@+id/sobre"
+        android:icon="@drawable/ic_info_outline_black_24dp"
+        adapt:showAsAction="never"
+        android:title="@string/sobre" />
+
+
+</menu>

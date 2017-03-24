@@ -84,5 +84,16 @@ public class MainActivity extends Activity {
                 startActivity(new Intent(getApplicationContext(),ViewHolderActivity.class));
             }
         });
+
+        Button btn_ActionBar = (Button) findViewById(R.id.btn_ActionBar);
+
+        btn_ActionBar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(getApplicationContext(),ActionBarActivity.class));
+            }
+        });
+
     }
+
 }

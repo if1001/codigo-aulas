@@ -2,8 +2,6 @@ package br.ufpe.cin.if1001.adapters;
 
 import android.app.ListActivity;
 import android.os.Bundle;
-import android.support.annotation.NonNull;
-import android.support.annotation.Nullable;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;

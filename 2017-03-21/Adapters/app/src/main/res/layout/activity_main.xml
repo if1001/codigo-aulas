@@ -44,5 +44,10 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="ViewHolder" />
+    <Button
+        android:id="@+id/btn_ActionBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="ActionBar" />
 </LinearLayout>
 

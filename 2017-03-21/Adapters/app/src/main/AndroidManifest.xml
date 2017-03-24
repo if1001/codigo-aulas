@@ -2,6 +2,12 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="br.ufpe.cin.if1001.adapters">
 
+    <supports-screens
+        android:anyDensity="true"
+        android:largeScreens="true"
+        android:normalScreens="true"
+        android:smallScreens="true" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -22,7 +28,9 @@
         <activity android:name=".GridViewActivity" />
         <activity android:name=".AutoCompleteActivity" />
         <activity android:name=".CustomAdapterActivity" />
-        <activity android:name=".ViewHolderActivity"></activity>
+        <activity android:name=".ViewHolderActivity" />
+        <activity android:name=".ActionBarActivity" />
+        <activity android:name=".TesteActivity"></activity>
     </application>
 
 </manifest>

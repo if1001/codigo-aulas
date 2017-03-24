@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">Adapters</string>
+    <string name="adicionar">Adicionar</string>
+    <string name="zerar">Zerar</string>
+    <string name="sobre">Sobre</string>
+    <string name="sobre_toast">String que vem do XML para ser exibida no Toast</string>
 </resources>
