@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <Button
+        android:id="@+id/btn_nothreads"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/btn_nothread_string"
+        android:textSize="24sp" >
+    </Button>
+
+    <Button
+        android:id="@+id/btn_thread_anr"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/btn_thread_anr_string"
+        android:textSize="24sp" >
+    </Button>
+
+    <Button
+        android:id="@+id/btn_thread_simple"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/btn_thread_simple_string"
+        android:textSize="24sp" >
+    </Button>
+
+    <Button
+        android:id="@+id/btn_thread_viewpost"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/btn_thread_viewpost_string"
+        android:textSize="24sp" >
+    </Button>
+
+    <Button
+        android:id="@+id/btn_thread_runonui"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/btn_thread_runonui_string"
+        android:textSize="24sp" >
+    </Button>
+
+    <Button
+        android:id="@+id/btn_thread_asynctask"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/btn_thread_asynctask_string"
+        android:textSize="24sp" >
+    </Button>
+
+</LinearLayout>

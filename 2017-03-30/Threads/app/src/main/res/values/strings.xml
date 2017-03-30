@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">Threads</string>
+    <string name="btn_nothread_string">Sem Threads</string>
+    <string name="btn_thread_anr_string">ANR</string>
+    <string name="btn_thread_simple_string">Threads (errado)</string>
+    <string name="btn_thread_viewpost_string">Threads (view.post)</string>
+    <string name="btn_thread_runonui_string">Threads (runOnUI)</string>
+    <string name="btn_thread_asynctask_string">Threads (AsyncTask)</string>
+    <string name="load_icon_string">Carregar</string>
+    <string name="other_button_string">Outro</string>
+    <string name="image_desc_string">Imagem</string>
+    <string name="title_activity_main">MainActivity</string>
+    <string name="contador_de_toasts">Toasts: </string>
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+</resources>
