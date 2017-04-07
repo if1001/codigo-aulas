@@ -10,6 +10,10 @@ import android.widget.Toast;
 
 public class MainActivity extends Activity {
 
+
+    //Inclua checagens e solicitação de permissão para armazenamento.
+    // no caso de Internet, coloque uma checagem de permissão para habilitar ou desabilitar o botão
+
     private Button btn_location;
     private Button btn_camera;
     private Button btn_internet;
