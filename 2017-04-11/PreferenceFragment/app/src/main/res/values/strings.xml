@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">PreferenceFragment</string>
+    <string name="ver_username_string">Alterar Nome de Usuário</string>
+</resources>
