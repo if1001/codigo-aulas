@@ -12,6 +12,7 @@ public class MusicPlayerNoBindingService extends Service {
     private final String TAG = "MusicPlayerNoBindingService";
 
     private static final int NOTIFICATION_ID = 1;
+    //Danilo vai testar com um video...
     private MediaPlayer mPlayer;
     private int mStartID;
 

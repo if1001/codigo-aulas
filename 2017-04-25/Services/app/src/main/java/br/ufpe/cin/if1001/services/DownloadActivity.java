@@ -15,7 +15,7 @@ import android.widget.Toast;
 public class DownloadActivity extends Activity {
     Button botaoDownload;
 
-    public static final String downloadLink = "http://s2.glbimg.com/erRr7I0aVEF657tCsXfKtyk5jh8=/0x0:3455x2300/690x459/s.glbimg.com/es/ge/f/original/2017/03/29/000_n29i0.jpg";
+    public static final String downloadLink = "http://s2.glbimg.com/gRLYk-GmK-2-FbSvOTV20IahiKk=/0x0:5312x2988/600x0/smart/filters:strip_icc()/i.s3.glbimg.com/v1/AUTH_59edd422c0c84a879bd37670ae4f538a/internal_photos/bs/2017/Q/d/HQEHUXSseqgqg86sGvtQ/20170425-180848.jpg";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
