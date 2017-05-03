@@ -34,7 +34,8 @@
             android:name=".ThreadANR"
             android:label="Thread ANR" />
         <activity android:name=".CountdownActivity" />
-        <activity android:name=".ListAdapterActivity"></activity>
+        <activity android:name=".ListAdapterActivity" />
+        <activity android:name=".PostDelayedActivity"></activity>
     </application>
 
 </manifest>

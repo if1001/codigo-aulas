@@ -6,8 +6,8 @@
     <string name="notify_simples_string">Notificar Simples</string>
     <string name="notify_custom_string">Notificar Personalizado</string>
     <string name="notify_progress_string">Notificar Progresso</string>
-    <string name="mostrartoastsimples_string">Mostrar Toast simples</string>
-    <string name="mostrartoastcustom_string">Mostrar Toast personalizado</string>
+    <string name="mostrartoastsimples_string">Toast simples</string>
+    <string name="mostrartoastcustom_string">Toast personalizado</string>
     <string name="intent_received_string">Intent Recebido</string>
     <string name="intent_received2_string">Intent Personalizado Recebido</string>
     <string name="custom_action_string">Intent Disparado a partir de uma Custom Action</string>

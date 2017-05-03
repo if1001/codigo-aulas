@@ -75,11 +75,21 @@ public class MainActivity extends Activity {
                 startActivity(intent);
             }
         });
+
         final Button button8 = (Button) findViewById(R.id.btn_async_countdown);
         button8.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(MainActivity.this, CountdownActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        final Button button9 = (Button) findViewById(R.id.btn_postDelayed);
+        button9.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, PostDelayedActivity.class);
                 startActivity(intent);
             }
         });

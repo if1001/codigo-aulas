@@ -118,4 +118,29 @@
         </Button>
     </LinearLayout>
 
+    <TextView
+        android:id="@+id/textViewPostDelayed"
+        android:padding="10dp"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/postDelayed_example" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal" >
+
+        <Button
+            android:id="@+id/btn_postDelayed"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:text="@string/btn_postDelayed_string"
+            android:textSize="16sp" >
+        </Button>
+
+    </LinearLayout>
+
 </LinearLayout>
