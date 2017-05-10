@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="br.ufpe.cin.if1001.contentprovider">
+
+    <permission android:name="br.ufpe.cin.if1001.contentprovider.arrayPERMISSION" />
+    <permission android:name="br.ufpe.cin.if1001.contentprovider.dbPERMISSION" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity android:name=".MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <provider
+            android:name=".ArrayContentProvider"
+            android:authorities="br.ufpe.cin.if1001.arrayprovider"
+            android:enabled="true"
+            android:exported="true" />
+        <provider
+            android:name=".SQLiteContentProvider"
+            android:authorities="br.ufpe.cin.if1001.dbprovider"
+            android:enabled="true"
+            android:exported="true" />
+        <provider
+            android:name=".AulaContentProvider"
+            android:authorities="br.ufpe.cin.if1001.aulaprovider"
+            android:enabled="true"
+            android:exported="true"></provider>
+    </application>
+
+</manifest>
