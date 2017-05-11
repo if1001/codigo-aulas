@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+    <Button
+        android:id="@+id/btn_RView1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="RecyclerView Simples" />
+    <Button
+        android:id="@+id/btn_CView1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="CardView Simples" />
+    <Button
+        android:id="@+id/btn_CView2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="CardView Click" />
+    <Button
+        android:id="@+id/btn_CViewCursor"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="CardView Cursor" />
+    <Button
+        android:id="@+id/btn_CViewGrid"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Grid" />
+    <Button
+        android:id="@+id/btn_CViewChange"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Change elements" />
+
+</LinearLayout>
