@@ -32,8 +32,8 @@ public class MapActivity extends FragmentActivity implements OnMapReadyCallback 
         setContentView(R.layout.activity_map);
 
         Intent i = getIntent();
-        latitude  = i.getDoubleExtra(LAT_KEY,0);
-        longitude = i.getDoubleExtra(LON_KEY,0);
+        latitude  = i.getDoubleExtra(LAT_KEY,-8.047);
+        longitude = i.getDoubleExtra(LON_KEY,-34.876);
 
         SupportMapFragment mapa = (SupportMapFragment) getSupportFragmentManager().findFragmentById(R.id.mapa);
         mapa.getMapAsync(this);
@@ -46,7 +46,7 @@ public class MapActivity extends FragmentActivity implements OnMapReadyCallback 
         LatLng location = new LatLng(latitude, longitude);
         gMap.addMarker(new MarkerOptions().position(location).title("Marcador!"));
         gMap.moveCamera(CameraUpdateFactory.newLatLng(location));
-        gMap.animateCamera(CameraUpdateFactory.zoomTo(10));
+        gMap.animateCamera(CameraUpdateFactory.zoomTo(15));
 
 
     }

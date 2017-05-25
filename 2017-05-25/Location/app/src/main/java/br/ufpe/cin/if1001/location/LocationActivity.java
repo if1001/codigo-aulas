@@ -44,7 +44,7 @@ public class LocationActivity extends ListActivity implements LocationListener {
             //atualizacoes de hora em hora
             //o dispositivo deve ter se movido em pelo menos 1km
             //objeto LocationListener
-            //mgr.requestLocationUpdates(LocationManager.GPS_PROVIDER, 3600000, 1000, this);
+            //mgr.requestLocationUpdates(LocationManager.NETWORK_PROVIDER, 3600000, 1000, this);
 
             //se colocar 0,0 tenta o maximo de updates
             mgr.requestLocationUpdates(LocationManager.GPS_PROVIDER, 3000, 0, this);
@@ -75,18 +75,17 @@ public class LocationActivity extends ListActivity implements LocationListener {
 
     @Override
     public void onStatusChanged(String provider, int status, Bundle extras) {
-       //nao utiliza
+       //nao utilizado neste exemplo
     }
 
     @Override
     public void onProviderEnabled(String provider) {
-        //nao utiliza
-
+        //nao utilizado neste exemplo
     }
 
     @Override
     public void onProviderDisabled(String provider) {
-        //nao utiliza
+        //nao utilizado neste exemplo
     }
 
     @Override
@@ -98,13 +97,13 @@ public class LocationActivity extends ListActivity implements LocationListener {
         //nao amarra com google maps
         String locData = "geo:"+loc.getLatitude()+","+loc.getLongitude();
 
-        locData = "geo:"+loc.getLatitude()+","+loc.getLongitude()+"(AQUI)";
+        //locData = "geo:"+loc.getLatitude()+","+loc.getLongitude()+"(AQUI)";
 
         //abre streetview
-        locData = "google.streetview:cbll="+loc.getLatitude()+","+loc.getLongitude();
+        //locData = "google.streetview:cbll="+loc.getLatitude()+","+loc.getLongitude();
 
         //abre navigation
-        locData = "google.navigation:q="+loc.getLatitude()+","+loc.getLongitude();
+        //locData = "google.navigation:q="+loc.getLatitude()+","+loc.getLongitude();
 
         Uri locationURI = Uri.parse(locData);
 

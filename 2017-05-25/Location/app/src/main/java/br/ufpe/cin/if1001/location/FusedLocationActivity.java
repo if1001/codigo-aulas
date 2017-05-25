@@ -97,7 +97,7 @@ public class FusedLocationActivity extends ListActivity implements GoogleApiClie
         if (loc != null) {
             adapter.add(loc);
         }
-        getListView().postDelayed(this, 5000);
+        //getListView().postDelayed(this, 5000);
     }
 
     //se houver algum problema, ou algo do tipo...
