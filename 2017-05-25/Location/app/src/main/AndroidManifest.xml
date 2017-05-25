@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="br.ufpe.cin.if1001.location">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+
+    <!-- pode ter uses-feature com android.hardware.location.gps -->
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+
+        <!--
+             pega valor de uma string definida em arquivo apenas para chaves,
+             chamado apikeys.xml (nao esta no github, por razoes obvias)
+              gere a sua propria e coloque no arquivo ou direto aqui no manifest
+        -->
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="@string/google_maps_api_key" />
+
+        <activity android:name=".MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".LocationActivity" />
+        <activity android:name=".FusedLocationActivity" />
+        <activity android:name=".ProvidersActivity" />
+        <activity android:name=".MapActivity" />
+        <activity android:name=".FusedLocationMapActivity"></activity>
+    </application>
+
+</manifest>
