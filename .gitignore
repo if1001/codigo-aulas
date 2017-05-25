@@ -39,5 +39,8 @@ captures/
 # Keystore files
 *.jks
 
-# Mac fils
+# Mac files
 .DS_Store
+
+#API Keys XML file
+apikeys.xml
