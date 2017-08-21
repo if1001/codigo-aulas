@@ -29,9 +29,9 @@ public class CountdownActivity extends Activity {
         iniciar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //contagemRegressiva(passos);
-                t = new ContaPassosTask();
-                t.execute(pontoPartida,pontoChegada);
+                contagemRegressiva(pontoPartida);
+                //t = new ContaPassosTask();
+                //.execute(pontoPartida,pontoChegada);
             }
         });
 

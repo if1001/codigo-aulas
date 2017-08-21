@@ -64,7 +64,7 @@ public class ThreadSimples extends Activity {
                         R.drawable.painter);
 
                 // vai dar pau...
-                //mIView.setImageBitmap(mBitmap);
+                mIView.setImageBitmap(mBitmap);
             }
         }).start();
     }

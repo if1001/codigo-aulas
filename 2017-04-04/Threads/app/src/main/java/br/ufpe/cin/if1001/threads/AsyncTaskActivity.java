@@ -36,6 +36,7 @@ public class AsyncTaskActivity extends Activity {
         final Button button = (Button) findViewById(R.id.loadButton);
         button.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
+                new LoadIconTask().execute(R.drawable.painter);
             }
         });
 
@@ -76,9 +77,7 @@ public class AsyncTaskActivity extends Activity {
 
         @Override
         protected void onProgressUpdate(Integer... values) {
-
             mProgressBar.setProgress(values[0]);
-
         }
 
         @Override

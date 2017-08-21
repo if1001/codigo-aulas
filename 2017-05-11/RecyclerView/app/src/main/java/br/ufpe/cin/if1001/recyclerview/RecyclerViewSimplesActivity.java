@@ -74,12 +74,12 @@ public class RecyclerViewSimplesActivity extends Activity {
         void bindModel(Pessoa p) {
             nome.setText(p.getNome());
             login.setText(p.getLogin());
-            //if (p.getLogin().equals("lmt")) {
+            if (p.getLogin().equals("lmt")) {
                 icone.setImageResource(R.drawable.ok);
-            //}
-            //else{
-                //icone.setImageResource(R.drawable.delete);
-            //}
+            }
+            else{
+                icone.setImageResource(R.drawable.delete);
+            }
         }
     }
 
