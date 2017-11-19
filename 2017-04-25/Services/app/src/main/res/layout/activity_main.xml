@@ -25,6 +25,13 @@
         android:text="Exemplo de IntentService"
         android:textSize="20sp" />
 
+    <Button
+        android:id="@+id/botao_enviaBroadcast"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="Enviar Broadcast"
+        android:textSize="20sp" />
+
 
 
 </LinearLayout>

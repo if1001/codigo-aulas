@@ -25,81 +25,106 @@ public class MainActivity extends Activity {
     private final String arquivo = "melhorDoNordeste.png";
     private String TAG = "DadosMemoriaExterna";
 
+	private static final String[] STORAGE_PERMISSIONS = {
+            Manifest.permission.WRITE_EXTERNAL_STORAGE
+    };
+    private static final int WRITE_EXTERNAL_STORAGE_REQUEST = 710;
+
+    @Override
+    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
+        switch(requestCode) {
+            case WRITE_EXTERNAL_STORAGE_REQUEST:
+                if (!podeEscrever()) {
+                    Toast.makeText(this, "Sem permissão para escrita", Toast.LENGTH_SHORT).show();
+                    finish();
+                }
+                break;
+        }
+    }
+    
+    public boolean podeEscrever() {
+        return ContextCompat.checkSelfPermission(this, Manifest.permission.WRITE_EXTERNAL_STORAGE) == PackageManager.PERMISSION_GRANTED;
+    }
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        
+        if (podeEscrever()) {
+			Button copiar = (Button) findViewById(R.id.botaoCopiar);
+			Button ler = (Button) findViewById(R.id.botaoLer);
+			Button limpar = (Button) findViewById(R.id.botaoLimpar);
+			Button apagar = (Button) findViewById(R.id.botaoApagar);
+			imagem = (ImageView) findViewById(R.id.imagem);
 
-        Button copiar = (Button) findViewById(R.id.botaoCopiar);
-        Button ler = (Button) findViewById(R.id.botaoLer);
-        Button limpar = (Button) findViewById(R.id.botaoLimpar);
-        Button apagar = (Button) findViewById(R.id.botaoApagar);
-        imagem = (ImageView) findViewById(R.id.imagem);
+			copiar.setOnClickListener(new View.OnClickListener() {
+				@Override
+				public void onClick(View v) {
+					if (isExternalStorageWritable()) {
+						File f = new File(getExternalFilesDir(Environment.DIRECTORY_PICTURES),arquivo);
+						if (!f.exists()) {
+							copiarImagemNaMemoria(f);
+							Toast.makeText(getApplicationContext(),"Copiando...",Toast.LENGTH_SHORT).show();
+						}
+						else {
+							Toast.makeText(getApplicationContext(),"Já existe!",Toast.LENGTH_SHORT).show();
+						}
+					}
+					else {
+						Toast.makeText(getApplicationContext(),"Memória externa nao disponivel!",Toast.LENGTH_SHORT).show();
+					}
+				}
+			});
 
-        copiar.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                if (isExternalStorageWritable()) {
-                    File f = new File(getExternalFilesDir(Environment.DIRECTORY_PICTURES),arquivo);
-                    if (!f.exists()) {
-                        copiarImagemNaMemoria(f);
-                        Toast.makeText(getApplicationContext(),"Copiando...",Toast.LENGTH_SHORT).show();
-                    }
-                    else {
-                        Toast.makeText(getApplicationContext(),"Já existe!",Toast.LENGTH_SHORT).show();
-                    }
-                }
-                else {
-                    Toast.makeText(getApplicationContext(),"Memória externa nao disponivel!",Toast.LENGTH_SHORT).show();
-                }
-            }
-        });
+			limpar.setOnClickListener(new View.OnClickListener() {
+				@Override
+				public void onClick(View v) {
+					limparConteudo();
+				}
+			});
 
-        limpar.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                limparConteudo();
-            }
-        });
+			ler.setOnClickListener(new View.OnClickListener() {
+				@Override
+				public void onClick(View v) {
+					if (isExternalStorageReadable()) {
+						File f = new File(getExternalFilesDir(Environment.DIRECTORY_PICTURES),arquivo);
+						if (f.exists()) {
+							imagem.setImageURI(Uri.parse("file://" + f.getAbsolutePath()));
+						}
+						else {
+							Toast.makeText(getApplicationContext(),"Arquivo não existe!",Toast.LENGTH_SHORT).show();
+						}
+					}
+					else {
+						Toast.makeText(getApplicationContext(),"Memória externa nao disponivel!",Toast.LENGTH_SHORT).show();
+					}
+				}
+			});
 
-        ler.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                if (isExternalStorageReadable()) {
-                    File f = new File(getExternalFilesDir(Environment.DIRECTORY_PICTURES),arquivo);
-                    if (f.exists()) {
-                        imagem.setImageURI(Uri.parse("file://" + f.getAbsolutePath()));
-                    }
-                    else {
-                        Toast.makeText(getApplicationContext(),"Arquivo não existe!",Toast.LENGTH_SHORT).show();
-                    }
-                }
-                else {
-                    Toast.makeText(getApplicationContext(),"Memória externa nao disponivel!",Toast.LENGTH_SHORT).show();
-                }
-            }
-        });
-
-        apagar.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                if (isExternalStorageWritable()) {
-                    File f = new File(getExternalFilesDir(Environment.DIRECTORY_PICTURES),arquivo);
-                    if (f.exists()) {
-                        f.delete();
-                        Toast.makeText(getApplicationContext(),"Apagando...",Toast.LENGTH_SHORT).show();
-                    }
-                    else {
-                        Toast.makeText(getApplicationContext(),"Arquivo inexistente!",Toast.LENGTH_SHORT).show();
-                    }
-                }
-                else {
-                    Toast.makeText(getApplicationContext(),"Memória externa nao disponivel!",Toast.LENGTH_SHORT).show();
-                }
-                limparConteudo();
-            }
-        });
-
+			apagar.setOnClickListener(new View.OnClickListener() {
+				@Override
+				public void onClick(View v) {
+					if (isExternalStorageWritable()) {
+						File f = new File(getExternalFilesDir(Environment.DIRECTORY_PICTURES),arquivo);
+						if (f.exists()) {
+							f.delete();
+							Toast.makeText(getApplicationContext(),"Apagando...",Toast.LENGTH_SHORT).show();
+						}
+						else {
+							Toast.makeText(getApplicationContext(),"Arquivo inexistente!",Toast.LENGTH_SHORT).show();
+						}
+					}
+					else {
+						Toast.makeText(getApplicationContext(),"Memória externa nao disponivel!",Toast.LENGTH_SHORT).show();
+					}
+					limparConteudo();
+				}
+			});            
+        }
+        else {
+            requestPermissions(STORAGE_PERMISSIONS,WRITE_EXTERNAL_STORAGE_REQUEST);
+        }
     }
 
     /* Checa se memoria externa esta disponivel para leitura e escrita */

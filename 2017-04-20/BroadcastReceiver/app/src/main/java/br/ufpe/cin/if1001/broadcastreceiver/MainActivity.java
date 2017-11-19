@@ -31,6 +31,14 @@ public class MainActivity extends Activity {
             }
         });
 
+        Button bateriaActivity = (Button) findViewById(R.id.bateriaActivity);
+        bateriaActivity.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(getApplicationContext(),BateriaActivity.class));
+            }
+        });
+
 
 
     }

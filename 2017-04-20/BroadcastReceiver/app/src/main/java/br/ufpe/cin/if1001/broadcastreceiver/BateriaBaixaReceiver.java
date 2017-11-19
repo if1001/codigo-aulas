@@ -14,5 +14,8 @@ public class BateriaBaixaReceiver extends BroadcastReceiver {
         Notification.Builder notBuilder = new Notification.Builder(context).setContentTitle("Bateria fraca!").setContentText("conecte o carregador!").setSmallIcon(android.R.drawable.ic_dialog_alert);
         NotificationManager mNotifyMgr = (NotificationManager) context.getSystemService(Context.NOTIFICATION_SERVICE);
         mNotifyMgr.notify(1,notBuilder.build());
+
+        String a = intent.getAction();
+        Toast.makeText(context, a, Toast.LENGTH_SHORT).show();
     }
 }

@@ -18,5 +18,12 @@
         android:text="Iniciar Activity"
         android:textSize="24sp">
     </Button>
+    <Button
+        android:id="@+id/bateriaActivity"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Bateria Activity"
+        android:textSize="24sp">
+    </Button>
 
 </LinearLayout>
