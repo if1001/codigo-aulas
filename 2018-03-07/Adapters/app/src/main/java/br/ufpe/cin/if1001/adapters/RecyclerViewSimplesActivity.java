@@ -39,7 +39,7 @@ public class RecyclerViewSimplesActivity extends Activity {
 
         //ItemDecoration permite adicionar dividers
         //Só é suportado a partir de targetSDKversion 22+
-        //recyclerView.addItemDecoration(new DividerItemDecoration(this, LinearLayoutManager.VERTICAL));
+        recyclerView.addItemDecoration(new DividerItemDecoration(this, LinearLayoutManager.VERTICAL));
 
         //setContentView sendo chamado direto com um objeto View, ao invés de um layout xml
         //Definindo layout da activity sem usar XML (nao tem um ListActivity que possamos estender)
