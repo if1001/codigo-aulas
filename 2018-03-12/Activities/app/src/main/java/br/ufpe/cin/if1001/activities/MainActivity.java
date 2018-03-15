@@ -57,9 +57,10 @@ public class MainActivity extends Activity {
             @Override
             public void onClick(View v) {
                 Intent i = new Intent(Intent.ACTION_SEND);
+                i.setType("text/plain");
+                //não são usados para resolver o intent
                 i.putExtra(Intent.EXTRA_SUBJECT,subject.getText().toString());
                 i.putExtra(Intent.EXTRA_TEXT,msg.getText().toString());
-                i.setType("text/plain");
                 startActivity(i);
             }
         });

@@ -46,7 +46,7 @@ public class StartActResultActivity extends Activity {
                 //content://contacts/1 -- que vai direto para um contato especifico
                 Uri contactUri = data.getData();
 
-                //pegar apenas o numero de telefone
+                //pegar apenas nome e numero de telefone
                 String[] projection = {ContactsContract.CommonDataKinds.Phone.NUMBER, ContactsContract.CommonDataKinds.Identity.DISPLAY_NAME};
 
                 //fazendo query direto na thread principal...
