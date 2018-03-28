@@ -15,7 +15,8 @@ public class CustomAdapterActivity extends ListActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setListAdapter(new PessoaAdapter(this, Constants.maisPessoas));
+        PessoaAdapter pessoaAdapter = new PessoaAdapter(this, Constants.maisPessoasAinda);
+        setListAdapter(pessoaAdapter);
     }
 
     class PessoaAdapter extends BaseAdapter {
@@ -51,14 +52,14 @@ public class CustomAdapterActivity extends ListActivity {
 
             //Alternativa seria:
             /*
-            View v;
+            //View v;
             if( convertView == null) {
                 v = LayoutInflater.from(c).inflate(R.layout.customadapter, parent, false);
             } else {
                 v = convertView;
             }
             //ainda precisaria dar findViewById... (custoso)
-            */
+            /**/
 
 
             //Buscando a referência ao TextView para inserirmos o nome

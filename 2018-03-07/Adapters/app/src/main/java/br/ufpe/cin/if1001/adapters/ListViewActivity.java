@@ -1,6 +1,8 @@
 package br.ufpe.cin.if1001.adapters;
 
 import android.app.Activity;
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
@@ -30,7 +32,12 @@ public class ListViewActivity extends Activity {
         escolha = findViewById(R.id.tv_listViewActivity);
 
         ListView lv = findViewById(R.id.lv_Elementos);
+        //pra exibir o texto na tela só precisa disso
         lv.setAdapter(pessoaArrayAdapter);
+
+
+
+
         lv.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
@@ -47,7 +54,13 @@ public class ListViewActivity extends Activity {
                 //O adapter guarda objetos do tipo Pessoa, de acordo com o parâmetro de tipo.
                 Pessoa p = arrayAdapter.getItem(position);
                 //Tendo acesso a um objeto Pessoa, podemos chamar qualquer método disponível.
-                escolha.setText(p.getLogin());
+                escolha.setText(p.getSite());
+
+                String site = p.getSite();
+                Intent i = new Intent();
+                i.setAction(Intent.ACTION_VIEW);
+                i.setData(Uri.parse(site));
+                startActivity(i);
             }
         });
     }

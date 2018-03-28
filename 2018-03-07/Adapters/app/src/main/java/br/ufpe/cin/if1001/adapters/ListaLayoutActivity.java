@@ -21,7 +21,7 @@ public class ListaLayoutActivity extends ListActivity {
         // Poderíamos adicionar o atributo direto no XML:
         // android:entries="@array/estadosBrasil"
         ArrayAdapter<String> stringArrayAdapter = new ArrayAdapter<>(
-                this,
+                this,//ou getApplicationContext
                 android.R.layout.simple_list_item_1,
                 getResources().getStringArray(R.array.estadosBrasil));
 

@@ -43,6 +43,6 @@ public class SpinnerActivity extends Activity
 
     @Override
     public void onNothingSelected(AdapterView<?> parent) {
-
+        //não estou fazendo nada...
     }
 }

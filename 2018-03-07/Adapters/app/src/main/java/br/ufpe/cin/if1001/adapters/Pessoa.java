@@ -48,7 +48,7 @@ public class Pessoa {
 
     @Override
     public String toString() {
-        return nome;
+        return "Prof. " + nome;
         //return nome + '(' + login + ')';
     }
 }

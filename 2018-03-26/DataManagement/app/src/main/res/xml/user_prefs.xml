@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+    android:key="@+id/pref_screen">
+    <PreferenceCategory android:title="GERAL">
+        <EditTextPreference
+            android:key="uname"
+            android:dialogMessage="Digite seu nome de usuário"
+            android:dialogTitle="Alterar nome de usuário"
+            android:negativeButtonText="Cancelar"
+            android:positiveButtonText="Enviar"
+            android:title="Nome de usuário"></EditTextPreference>
+    </PreferenceCategory>
+
+    <PreferenceCategory android:title="OUTRAS">
+        <CheckBoxPreference
+            android:title="Checkbox"
+            android:defaultValue="true"
+            android:key="checkboxPref" />
+        <SwitchPreference
+            android:key="switchPref"
+            android:title="Switch"
+            android:defaultValue="false"
+            />
+        <ListPreference
+            android:entries="@array/estadosBrasil"
+            android:entryValues="@array/estadosBrasil"
+            android:key="listPref"
+            android:title="List Preference"
+            android:dialogTitle="Estados"
+            android:dialogMessage="Escolha seu estado preferido"
+            android:defaultValue="PE"
+            android:positiveButtonText="Salvar"
+            android:negativeButtonText="Cancelar"
+            />
+    </PreferenceCategory>
+</PreferenceScreen>
