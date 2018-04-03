@@ -30,7 +30,7 @@ public class SQLiteActivity extends Activity {
         setContentView(R.layout.activity_sqlite);
 
         //Pegando instância do Helper, usando padrão singleton
-        db = SQLEstadosHelper.getInstance(this);
+        db = SQLEstadosHelper.getInstance(getApplicationContext());
 
         //O que acontece ao clicar no botão Adicionar Estado
         adicionarEstado = findViewById(R.id.btnAdicionaEstado);
@@ -76,14 +76,16 @@ public class SQLiteActivity extends Activity {
                 String UF = cursor.getString(cursor.getColumnIndex(SQLEstadosHelper.STATE_CODE));
 
                 //Cria Intent explícito passando o código do estado, para uma tela de edição
+                /*
                 Intent i = new Intent(getApplicationContext(),EditarEstadoActivity.class);
                 i.putExtra(SQLEstadosHelper.STATE_CODE, UF);
                 startActivity(i);
+                /**/
 
                 //Uma alternativa seria rodar o RemoveTask para remover o estado.
                 // Se for descomentada a linha abaixo, vai remover o estado quando clicar
                 // Aí tem que comentar a parte de cima do startActivity
-                //t = new RemoveTask().execute(UF);
+                t = new RemoveTask().execute(UF);
             }
         });
     }

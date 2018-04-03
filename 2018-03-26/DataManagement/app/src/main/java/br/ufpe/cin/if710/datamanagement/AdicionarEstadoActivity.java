@@ -29,19 +29,11 @@ public class AdicionarEstadoActivity extends Activity {
                 //Roda a Task de Inserir Estado, passando o que foi digitado nos campos de texto como argumento
                 String estadoUF = UF.getText().toString();
                 String estadoNOME = nomeEstado.getText().toString();
-
+                new InsereTask().execute(estadoUF,estadoNOME);
             }
         });
     }
 
-
-
-
-
-
-
-
-    /*
     private class InsereTask extends AsyncTask<String, Void, Void> {
         @Override
         protected Void doInBackground(String... params) {
