@@ -7,7 +7,6 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
-import br.ufpe.cin.if710.adapters.Constants.pessoas
 import kotlinx.android.synthetic.main.item_cardview.view.*
 
 class PessoaAdapter (private val pessoas: Array<Pessoa>, private val c : Context) : RecyclerView.Adapter<PessoaAdapter.ViewHolder>() {

@@ -10,12 +10,16 @@ import android.widget.ArrayAdapter
 import android.widget.BaseAdapter
 import android.widget.TextView
 
+//Herda de ListActivity
 class CustomAdapterActivity : ListActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         val pessoaAdapter = PessoaAdapter(this, Constants.maisPessoasAinda)
+
+        //chamada ao setListAdapter da classe ListActivity
         listAdapter = pessoaAdapter
+
     }
 
     internal inner class PessoaAdapter(
@@ -35,18 +39,18 @@ class CustomAdapterActivity : ListActivity() {
         }
 
         override fun getView(position: Int, convertView: View?, parent: ViewGroup): View {
-            val v = LayoutInflater.from(c).inflate(R.layout.item_custom_adapter, parent, false)
+            //val v = LayoutInflater.from(c).inflate(R.layout.item_custom_adapter, parent, false)
 
             //Alternativa seria:
-            /*
+            val v : View
             //View v;
             if( convertView == null) {
-                v = LayoutInflater.from(c).inflate(R.layout.customadapter, parent, false);
+                v = LayoutInflater.from(c).inflate(R.layout.item_custom_adapter, parent, false);
             } else {
                 v = convertView;
             }
             //ainda precisaria dar findViewById... (custoso)
-            */
+            /**/
 
 
             //Buscando a referência ao TextView para inserirmos o nome
@@ -56,8 +60,9 @@ class CustomAdapterActivity : ListActivity() {
 
             //getItem retorna Object, então precisamos dar o cast
             // ou criar um método específico que retorne pessoa
-            val nome = (getItem(position) as Pessoa).nome
-            val login = (getItem(position) as Pessoa).login
+            val pessoa = getItem(position) as Pessoa
+            val nome = pessoa.nome
+            val login = pessoa.login
 
             //Efetivamente setando o nome e login na View
             tvNome.text = nome

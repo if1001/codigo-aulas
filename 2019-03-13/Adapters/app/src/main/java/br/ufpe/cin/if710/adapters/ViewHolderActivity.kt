@@ -49,7 +49,7 @@ class ViewHolderActivity : ListActivity() {
 
             val p = getItem(position) as Pessoa
             //Setando valores por meio do holder
-            holder.nome!!.text = p.nome
+            holder.nome?.text = p.nome
             holder.login!!.text = p.email
 
             return v

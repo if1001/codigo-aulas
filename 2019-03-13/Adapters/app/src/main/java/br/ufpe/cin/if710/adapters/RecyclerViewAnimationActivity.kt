@@ -16,7 +16,6 @@ import kotlinx.android.synthetic.main.item_cardview.view.*
 import java.util.*
 
 class RecyclerViewAnimationActivity : Activity() {
-    private var listaPessoas: SortedList<Pessoa>? = null
     private var adapter: PessoaAdapter? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -30,19 +29,19 @@ class RecyclerViewAnimationActivity : Activity() {
         //outras opcoes incluem GridLayoutManager, por ex.
         //tambem pode ser implementado um LayoutManager customizado
 
-        adapter = PessoaAdapter()
+        val pessoas : SortedList<Pessoa> = SortedList(Pessoa::class.java, metodosCallback)
+        adapter = PessoaAdapter(pessoas)
         //definindo o adapter (semelhante a listadapter...)
         listRecyclerView.adapter = adapter
-        listaPessoas = SortedList(Pessoa::class.java, metodosCallback)
         btn_Adiciona.setOnClickListener {
             val i = Random().nextInt(Constants.maisPessoas.size)
-            listaPessoas?.add(Constants.maisPessoas[i])
+            pessoas.add(Constants.maisPessoas[i])
         }
 
 
     }
 
-    private inner class PessoaAdapter : RecyclerView.Adapter<CardChangeHolder>() {
+    private inner class PessoaAdapter(private val pessoas : SortedList<Pessoa>) : RecyclerView.Adapter<CardChangeHolder>() {
 
         override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): CardChangeHolder {
             //cria, configura e retorna um ViewHolder para uma linha da lista
@@ -54,12 +53,12 @@ class RecyclerViewAnimationActivity : Activity() {
 
         override fun onBindViewHolder(holder: CardChangeHolder, position: Int) {
             //responsavel por atualizar ViewHolder com dados de um elemento na posição 'position'
-            holder.bindModel(listaPessoas!!.get(position))
+            holder.bindModel(pessoas.get(position))
         }
 
         override fun getItemCount(): Int {
             //total de elementos
-            return listaPessoas!!.size()
+            return pessoas.size()
         }
     }
 
