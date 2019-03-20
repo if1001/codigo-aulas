@@ -8,13 +8,16 @@ import kotlinx.android.synthetic.main.activity_lifecycle.*
 import org.jetbrains.anko.alert
 
 class LifecycleActivity : AppCompatActivity() {
-    private var keyDIGITADO = "oQueFoiDigitado"
-    private var keyLIFECYCLE = "lifecycle"
+    private val keyDIGITADO = "oQueFoiDigitado"
+    private val keyLIFECYCLE = "lifecycle"
     private var status: String = ""
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_lifecycle)
+
+        textoDigitado.text = savedInstanceState?.getString(keyDIGITADO)
+        lifecycleLog.text = savedInstanceState?.getString(keyLIFECYCLE)
 
         botaoDialog.setOnClickListener {
             alert("Alguma mensagem...") {
@@ -80,6 +83,12 @@ class LifecycleActivity : AppCompatActivity() {
         super.onStop()
     }
 
+    override fun onSaveInstanceState(outState: Bundle?) {
+        outState?.putString(keyDIGITADO,textoDigitado.text.toString())
+        outState?.putString(keyLIFECYCLE,lifecycleLog.text.toString())
+        super.onSaveInstanceState(outState)
+    }
+
     override fun onDestroy() {
         status = "onDestroy() de " + this.localClassName
         atualizaLifecycle(status)
@@ -95,22 +104,5 @@ class LifecycleActivity : AppCompatActivity() {
     fun Any.toast(msg:String) {
         Toast.makeText(applicationContext, msg, Toast.LENGTH_SHORT).show()
     }
-
-
-
-
-
-
-
-    /*
-
-    textoDigitado.text = savedInstanceState?.getString(keyDIGITADO)
-    lifecycleLog.text = savedInstanceState?.getString(keyLIFECYCLE)
-    override fun onSaveInstanceState(outState: Bundle?) {
-        outState?.putString(keyDIGITADO,textoDigitado.text.toString())
-        outState?.putString(keyLIFECYCLE,lifecycleLog.text.toString())
-        super.onSaveInstanceState(outState)
-    }
-     */
 
 }
