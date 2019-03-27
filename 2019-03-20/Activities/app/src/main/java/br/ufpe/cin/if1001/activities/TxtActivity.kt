@@ -10,7 +10,6 @@ class TxtActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_txt)
-
         //val i = intent
         assunto.text = intent.getStringExtra(Intent.EXTRA_SUBJECT)
         texto.text = intent.getStringExtra(Intent.EXTRA_TEXT)

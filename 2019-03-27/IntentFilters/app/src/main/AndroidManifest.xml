@@ -9,10 +9,32 @@
             android:roundIcon="@mipmap/ic_launcher_round"
             android:supportsRtl="true"
             android:theme="@style/AppTheme">
+        <activity android:name=".WebActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+                <data
+                     android:scheme="http" />
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.BROWSABLE" />
+            </intent-filter>
+        </activity>
         <activity android:name=".MapActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW"/>
+
+                <data android:scheme="geo"/>
+
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
         </activity>
         <activity android:name=".TxtActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.SEND"/>
 
+                <data android:mimeType="text/plain"/>
+
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
         </activity>
         <activity android:name=".MainActivity">
             <intent-filter>

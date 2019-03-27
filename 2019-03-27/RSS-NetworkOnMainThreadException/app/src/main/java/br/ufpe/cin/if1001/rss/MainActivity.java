@@ -12,8 +12,8 @@ import java.net.URL;
 
 public class MainActivity extends Activity {
 
-    private final String RSS_FEED = "http://rss.cnn.com/rss/edition.rss";
     private TextView conteudoRSS;
+    private final String RSS_FEED = "http://rss.cnn.com/rss/edition.rss";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,6 +34,7 @@ public class MainActivity extends Activity {
         } catch (IOException e) {
             e.printStackTrace();
         }
+        //faz outra coisa
     }
 
     private String getRssFeed(String feed) throws IOException {

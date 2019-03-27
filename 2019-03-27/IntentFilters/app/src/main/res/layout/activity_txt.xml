@@ -9,7 +9,7 @@
     <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textSize="20dp"
+            android:textSize="30sp"
             android:textStyle="bold"
             android:text="Subject"
             android:layout_margin="10dp"/>
@@ -18,12 +18,12 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="10dp"
-            android:textSize="15dp"
+            android:textSize="25sp"
             android:text="assunto..." />
     <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textSize="20dp"
+            android:textSize="30sp"
             android:layout_margin="10dp"
             android:textStyle="bold"
             android:text="Texto" />
@@ -31,7 +31,7 @@
             android:id="@+id/texto"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textSize="15dp"
+            android:textSize="25sp"
             android:layout_margin="10dp"
             android:text="algo..." />
 
