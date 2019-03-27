@@ -14,13 +14,18 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         btn1.setOnClickListener {
-            startActivity(Intent(applicationContext, LifecycleActivity::class.java))
+            startActivity(
+                Intent(
+                    applicationContext,
+                    LifecycleActivity::class.java
+                )
+            )
         }
 
         btn2.setOnClickListener {
             val i = Intent()
             i.action = ACTION_VIEW
-            i.data = Uri.parse("http://www.cin.ufpe.br")
+            i.data = Uri.parse("http:/www.cin.ufpe.br")
             i.addCategory(CATEGORY_DEFAULT)
             i.addCategory(CATEGORY_BROWSABLE)
             startActivity(i)
