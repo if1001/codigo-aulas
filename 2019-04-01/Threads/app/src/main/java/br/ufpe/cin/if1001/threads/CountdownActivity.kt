@@ -3,6 +3,8 @@ package br.ufpe.cin.if1001.threads
 import android.app.Activity
 import android.os.AsyncTask
 import android.os.Bundle
+import android.os.SystemClock
+import android.util.Log
 import android.view.View
 import android.widget.Button
 import android.widget.TextView
@@ -13,7 +15,7 @@ class CountdownActivity : Activity() {
 
     internal var pontoPartida = 5
     internal var pontoChegada = 0
-    internal var delay = 500
+    internal var delay = 1000L
     internal var tarefa: ContagemRegressivaTask? = null
 
 
@@ -22,6 +24,7 @@ class CountdownActivity : Activity() {
         setContentView(R.layout.activity_countdown)
 
         btn_iniciarCountdown.setOnClickListener {
+            //contagemRegressiva(5)
             tarefa = ContagemRegressivaTask()
             tarefa?.execute(pontoPartida, pontoChegada)
         }
@@ -32,7 +35,7 @@ class CountdownActivity : Activity() {
     internal fun contagemRegressiva(passos: Int) {
         for (i in passos downTo 0) {
             try {
-                Thread.sleep(500)
+                Thread.sleep(delay)
             } catch (e: InterruptedException) {
                 e.printStackTrace()
             }
@@ -48,30 +51,25 @@ class CountdownActivity : Activity() {
         }
 
         override fun doInBackground(vararg integers: Int?): Unit {
-            //seria interessante checar se tem dois argumentos
+            //seria interessante checar se tem dois argumentos - pegar valores de integers, etc...
             if (integers!=null) {
-                var pontoPartida = 5
-                val pontoChegada = 0
-
-                //assumindo que pontoChegada < pontoPartida
-                while (pontoChegada <= pontoPartida) {
+                var valorAtual = 5
+                val fim = 0
+                while (valorAtual >= fim) {
+                    Log.d("IF1001-Threads", "Valor atual: $valorAtual - Alvo: $fim")
                     if (!isCancelled) {
+                        SystemClock.sleep(delay)
                         //atualizar o TextView com o valor atual
                         //não pode dar setText... (thread separada)
-                        //valorContagem.setText("erro!");
-                        try {
-                            Thread.sleep(1000)
-                        } catch (e: InterruptedException) {
-                            e.printStackTrace()
-                        }
-
-                        publishProgress(pontoPartida?.toString())
-                        pontoPartida?.minus(1)
+                        publishProgress(valorAtual.toString())
+                        valorAtual = valorAtual - 1
+                    }
+                    else {
+                        break
                     }
                 }
             }
         }
-
 
         override fun onProgressUpdate(vararg values: String) {
             //garantido de rodar na thread principal

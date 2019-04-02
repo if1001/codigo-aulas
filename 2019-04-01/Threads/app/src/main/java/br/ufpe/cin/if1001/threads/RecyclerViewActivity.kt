@@ -14,8 +14,6 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
 import android.widget.Toast
-import org.jetbrains.anko.doAsync
-import org.jetbrains.anko.uiThread
 
 
 class RecyclerViewActivity : Activity() {
@@ -72,16 +70,12 @@ class RecyclerViewActivity : Activity() {
 
     override fun onStart() {
         super.onStart()
-        doAsync {
-            uiThread {
-
-            }
-        }
         task = AddPessoaTask()
     }
 
     override fun onResume() {
         super.onResume()
+        //O asterisco permite que o array seja passado como uma sequência de argumentos
         task?.execute(*Constants.maisPessoas)
 
     }
@@ -147,6 +141,10 @@ class RecyclerViewActivity : Activity() {
 
     private inner class AddPessoaTask : AsyncTask<Pessoa, Pessoa, Void>() {
 
+        override fun onPreExecute() {
+            Toast.makeText(applicationContext, "começando...", Toast.LENGTH_LONG).show()
+        }
+
         override fun doInBackground(vararg params: Pessoa): Void? {
             for (p in params) {
                 if (isCancelled) {
@@ -164,9 +162,10 @@ class RecyclerViewActivity : Activity() {
             }
         }
 
-        override fun onPostExecute(aVoid: Void) {
+        override fun onPostExecute(result: Void?) {
             Toast.makeText(applicationContext, "Terminou!", Toast.LENGTH_SHORT).show()
             task = null
         }
+
     }
 }
