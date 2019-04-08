@@ -79,6 +79,13 @@ class MemoriaInternaActivity : AppCompatActivity() {
         pw.println(txt)
         //fecha o arquivo
         pw.close()
+        //Alternativa usando lambda expressions
+        /*
+        PrintWriter(BufferedWriter(OutputStreamWriter(fos))).apply {
+            println(txt)
+            close()
+        }
+        */
     }
 
     @Throws(IOException::class)
@@ -86,7 +93,11 @@ class MemoriaInternaActivity : AppCompatActivity() {
         //abre o arquivo para leitura - bufferedreader
         val br = openFileInput(arquivo).bufferedReader()
         val lineList = mutableListOf<String>()
-        br.useLines { lines -> lines.forEach { lineList.add(it) } }
+        br.useLines {
+                lines -> lines.forEach {
+                    lineList.add(it)
+                }
+        }
 
         //Para cada linha faça
         lineList.forEach {

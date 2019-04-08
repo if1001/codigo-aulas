@@ -22,13 +22,13 @@ class PrefsMenuActivity : AppCompatActivity() {
     // Fragmento que mostra a preference com username
     class UserPreferenceFragment : PreferenceFragmentCompat() {
 
-        private var mListener: SharedPreferences.OnSharedPreferenceChangeListener? = null
-        private var mUserNamePreference: Preference? = null
-
         override fun onCreatePreferences(savedInstanceState: Bundle?, rootKey: String?) {
             // Carrega preferences a partir de um XML
             addPreferencesFromResource(R.xml.user_prefs)
         }
+
+        private var mListener: SharedPreferences.OnSharedPreferenceChangeListener? = null
+        private var mUserNamePreference: Preference? = null
 
         override fun onCreate(savedInstanceState: Bundle?) {
             super.onCreate(savedInstanceState)

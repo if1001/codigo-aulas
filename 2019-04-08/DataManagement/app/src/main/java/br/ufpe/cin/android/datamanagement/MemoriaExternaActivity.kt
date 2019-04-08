@@ -107,6 +107,7 @@ class MemoriaExternaActivity : AppCompatActivity() {
                 } else {
                     Toast.makeText(applicationContext, "Memória externa nao disponivel!", Toast.LENGTH_SHORT).show()
                 }
+                //TODO faz diferença?
                 limparConteudo()
             }
 
