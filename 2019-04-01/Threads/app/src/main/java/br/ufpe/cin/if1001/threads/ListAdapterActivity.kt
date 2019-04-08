@@ -35,6 +35,7 @@ class ListAdapterActivity : Activity() {
 
     override fun onResume() {
         super.onResume()
+
         task?.execute(*Constants.maisPessoas)
     }
 
