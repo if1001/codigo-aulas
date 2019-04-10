@@ -5,9 +5,12 @@ import android.database.sqlite.SQLiteDatabase
 import android.provider.SyncStateContract.Helpers.insert
 import org.jetbrains.anko.db.*
 
+//TODO restringir o construtor
 class SqlEstadosHelperAnko(ctx: Context) : ManagedSQLiteOpenHelper(ctx, "if710", null, 1) {
+
     internal val estadosBrasil: Array<String> = ctx.resources.getStringArray(R.array.estadosBrasil)
 
+    //public static String DATABASE_TABLE = "estados";
     companion object {
         //Nome da tabela do Banco a ser usada
         val DATABASE_TABLE = "estados"

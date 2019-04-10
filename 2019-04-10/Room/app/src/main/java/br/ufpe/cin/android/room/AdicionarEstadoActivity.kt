@@ -12,7 +12,16 @@ class AdicionarEstadoActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.alterar_estado)
         btnInserirEstado.setOnClickListener {
-
+            val estado_UF = txtUF.text.toString()
+            val estado_NOME = txtNome.text.toString()
+            val estado = Estado(estado_UF, estado_NOME)
+            doAsync {
+                val db = EstadosDB.getDatabase(applicationContext)
+                db.estadosDAO().inserirEstados(estado)
+                uiThread {
+                    finish()
+                }
+            }
         }
     }
 }

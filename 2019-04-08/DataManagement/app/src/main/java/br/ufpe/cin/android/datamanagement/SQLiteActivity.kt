@@ -72,7 +72,11 @@ class SQLiteActivity : AppCompatActivity() {
                 val whereArgs = arrayOf<String>(UF)
                 //Roda uma remoção no banco, algo do tipo DELETE FROM estados WHERE `uf` LIKE 'PE'
                 database.use {
-                    delete(SqlEstadosHelperAnko.DATABASE_TABLE, where, whereArgs)
+                    delete(
+                        SqlEstadosHelperAnko.DATABASE_TABLE,
+                        where,
+                        whereArgs
+                    )
                 }
                 val c = doQuery()
                 uiThread {

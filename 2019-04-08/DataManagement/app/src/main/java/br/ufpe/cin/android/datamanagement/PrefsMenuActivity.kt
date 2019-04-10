@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity
 
 import android.os.Bundle
 import android.preference.Preference
+import android.preference.PreferenceFragment
 import androidx.preference.PreferenceFragmentCompat
 
 class PrefsMenuActivity : AppCompatActivity() {
