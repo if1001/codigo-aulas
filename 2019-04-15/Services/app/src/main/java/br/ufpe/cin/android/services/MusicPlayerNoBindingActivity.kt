@@ -13,8 +13,12 @@ class MusicPlayerNoBindingActivity : Activity() {
 
         val serviceIntent = Intent(this, MusicPlayerNoBindingService::class.java)
 
-        btn_StartService.setOnClickListener { startService(serviceIntent) }
+        btn_StartService.setOnClickListener {
+            startService(serviceIntent)
+        }
 
-        btn_StopService.setOnClickListener { stopService(serviceIntent) }
+        btn_StopService.setOnClickListener {
+            stopService(serviceIntent)
+        }
     }
 }

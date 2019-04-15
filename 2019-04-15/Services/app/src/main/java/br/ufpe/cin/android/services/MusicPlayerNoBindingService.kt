@@ -17,7 +17,7 @@ class MusicPlayerNoBindingService : Service() {
         super.onCreate()
 
         // configurar media player
-        mPlayer = MediaPlayer.create(this, R.raw.moonlightsonata)
+        mPlayer = MediaPlayer.create(this, R.raw.ghosts)
 
         //nao deixa entrar em loop
         mPlayer?.isLooping = false
@@ -31,7 +31,7 @@ class MusicPlayerNoBindingService : Service() {
     }
 
     override fun onStartCommand(intent: Intent, flags: Int, startId: Int): Int {
-        if (null != mPlayer) {
+        if (mPlayer != null) {
             // ID para o comando de start especifico
             mStartID = startId
 
@@ -52,7 +52,6 @@ class MusicPlayerNoBindingService : Service() {
 
     override fun onDestroy() {
         super.onDestroy()
-        mPlayer?.stop()
         mPlayer?.release()
     }
 

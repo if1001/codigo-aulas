@@ -31,6 +31,7 @@ class DownloadActivity : Activity() {
     }
 
     companion object {
-        val downloadLink = "https://ogimg.infoglobo.com.br/in/23600917-0ee-653/FT1086A/652/x82228602_.jpg.pagespeed.ic.d-x8YHpjZR.jpg"
+        val downloadLink = "https://ogimg.infoglobo.com.br/in/23601652-8ad-ca3/FT1086A/652/x82229686_.jpg.pagespeed.ic.VtA2M3DfAf.jpg"
+
     }
 }

@@ -77,9 +77,16 @@ class MusicPlayerWithBindingActivity : Activity() {
         super.onStart()
         if (!isBound) {
             Toast.makeText(applicationContext, "Binding...", Toast.LENGTH_SHORT).show()
-            Intent(this, MusicPlayerWithBindingService::class.java).also {
+            val i = Intent(this,
+                MusicPlayerWithBindingService::class.java)
+            bindService(i, sConn, Context.BIND_AUTO_CREATE)
+            /*
+            Intent(this,
+                MusicPlayerWithBindingService::class.java)
+                .also {
                 bindService(it, sConn, Context.BIND_AUTO_CREATE)
             }
+            */
         }
     }
 

@@ -19,7 +19,9 @@ class MainThreadServiceActivity : Activity() {
             Toast.makeText(applicationContext, "Iniciou o Service", Toast.LENGTH_LONG).show()
         }
 
-        btn_StopServiceMainThread.setOnClickListener { stopService(serviceIntent) }
+        btn_StopServiceMainThread.setOnClickListener {
+            stopService(serviceIntent)
+        }
 
         btn_Toast.setOnClickListener { Toast.makeText(applicationContext, "Toast", Toast.LENGTH_SHORT).show() }
     }
