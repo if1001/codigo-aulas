@@ -18,6 +18,9 @@ class MainActivity : AppCompatActivity() {
         enviarBroadcast.setOnClickListener {
             sendBroadcast(Intent(STA_BROADCAST_ACTION))
         }
+        enviarBroadcastDinamico.setOnClickListener {
+            sendBroadcast(Intent(DynRecActivity.DYN_BROADCAST_ACTION))
+        }
 
         abrirActivity.setOnClickListener { startActivity(Intent(applicationContext, DynRecActivity::class.java)) }
         smsActivity.setOnClickListener { startActivity(Intent(applicationContext, SmsActivity::class.java)) }

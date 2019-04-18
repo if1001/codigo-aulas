@@ -10,6 +10,8 @@ import android.content.pm.PackageManager
 import android.os.Bundle
 import android.provider.Telephony
 import android.telephony.SmsMessage
+import android.telephony.TelephonyManager
+import android.telephony.TelephonyManager.PHONE_TYPE_CDMA
 import android.widget.Toast
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
@@ -20,12 +22,12 @@ class SmsActivity : Activity() {
     internal var smsReceiver: BroadcastReceiver = object : BroadcastReceiver() {
         override fun onReceive(context: Context, intent: Intent) {
             Toast.makeText(context, "Chegou um SMS", Toast.LENGTH_SHORT).show()
-            //val activePhone = TelephonyManager.getDefault().getCurrentPhoneType();
-            //String format = (PHONE_TYPE_CDMA == activePhone) ? SmsConstants.FORMAT_3GPP2 : SmsConstants.FORMAT_3GPP;
+            //val activePhone = TelephonyManager.getDefault().getCurrentPhoneType()
+            //val format = (PHONE_TYPE_CDMA == activePhone) ? SmsConstants.FORMAT_3GPP2 : SmsConstants.FORMAT_3GPP
             val rawMsgs = intent.extras!!.get("pdus") as Array<Any>
             for (raw in rawMsgs) {
                 val msg = SmsMessage.createFromPdu(raw as ByteArray)
-                if (msg.messageBody.toUpperCase().contains("IF710")) {
+                if (msg.messageBody.toUpperCase().contains("IF1001")) {
                     Toast.makeText(context, "Tem algo que nos interessa...", Toast.LENGTH_SHORT).show()
                 }
             }

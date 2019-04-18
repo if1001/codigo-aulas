@@ -14,6 +14,7 @@ class DynamicReceiver : BroadcastReceiver() {
         Log.i(TAG, "INTENT Recebido")
         Toast.makeText(context, "INTENT Recebido pelo DynamicReceiver", Toast.LENGTH_SHORT).show()
         context.startActivity(Intent(context, BroadcastActivity::class.java))
+
     }
 
 }
