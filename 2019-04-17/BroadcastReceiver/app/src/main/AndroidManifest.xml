@@ -39,7 +39,7 @@
                 android:enabled="true"
                 android:exported="true">
             <intent-filter>
-                <action android:name="br.ufpe.cin.if710.broadcasts.exemplo" />
+                <action android:name="br.ufpe.cin.android.broadcasts.exemplo" />
             </intent-filter>
         </receiver>
 

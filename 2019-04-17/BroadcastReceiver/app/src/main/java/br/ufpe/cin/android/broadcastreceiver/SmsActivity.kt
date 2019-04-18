@@ -27,7 +27,7 @@ class SmsActivity : Activity() {
             val rawMsgs = intent.extras!!.get("pdus") as Array<Any>
             for (raw in rawMsgs) {
                 val msg = SmsMessage.createFromPdu(raw as ByteArray)
-                if (msg.messageBody.toUpperCase().contains("IF1001")) {
+                if (msg.messageBody.toUpperCase().contains(“ANDROID”)) {
                     Toast.makeText(context, "Tem algo que nos interessa...", Toast.LENGTH_SHORT).show()
                 }
             }

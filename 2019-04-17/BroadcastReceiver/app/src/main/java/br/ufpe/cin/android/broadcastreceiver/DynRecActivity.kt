@@ -33,7 +33,7 @@ class DynRecActivity : Activity() {
     }
 
     companion object {
-        val DYN_BROADCAST_ACTION = "br.ufpe.cin.if710.broadcasts.dinamico"
+        val DYN_BROADCAST_ACTION = "br.ufpe.cin.android.broadcasts.dinamico"
     }
 
 

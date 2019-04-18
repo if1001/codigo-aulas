@@ -8,7 +8,7 @@ import kotlinx.android.synthetic.main.activity_main.*
 class MainActivity : AppCompatActivity() {
 
     companion object {
-        val STA_BROADCAST_ACTION = "br.ufpe.cin.if710.broadcasts.exemplo"
+        val STA_BROADCAST_ACTION = "br.ufpe.cin.android.broadcasts.exemplo"
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
