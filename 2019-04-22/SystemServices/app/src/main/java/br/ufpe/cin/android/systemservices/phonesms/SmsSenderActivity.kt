@@ -33,7 +33,7 @@ class SmsSenderActivity : Activity() {
 
     override fun onStart() {
         super.onStart()
-        btnSend.isEnabled = false
+        btnSend.isEnabled = true
     }
 
     override fun onStop() {

@@ -25,7 +25,7 @@ class PackageManagerQueryActivity : ListActivity() {
             listAdapter = adapter
         } else if (query == PackageManagerActivity.GET_BROADCASTS) {
             var intent = Intent(Intent.ACTION_BOOT_COMPLETED)
-            intent = Intent(Intent.ACTION_BATTERY_LOW)
+            //intent = Intent(Intent.ACTION_BATTERY_LOW)
             val info = packageManager.queryBroadcastReceivers(intent, MATCH_ALL)
             val adapter = ArrayAdapter(this, android.R.layout.simple_list_item_1, info)
             listAdapter = adapter
