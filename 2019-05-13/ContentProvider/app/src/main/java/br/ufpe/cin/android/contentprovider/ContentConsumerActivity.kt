@@ -13,7 +13,9 @@ class ContentConsumerActivity : Activity() {
 
         val cr = contentResolver
         //consulta na main thread, pode ser custoso, usar AsyncTask ou Loader
-        val c = cr.query(ContentProviderContract.CONTENT_LIST_URI, null, null, null, null)
+        val c = cr.query(
+            ContentProviderContract.CONTENT_LIST_URI,
+            null, null, null, null)
         val adapter = SimpleCursorAdapter(
             this,
             R.layout.itemlista,

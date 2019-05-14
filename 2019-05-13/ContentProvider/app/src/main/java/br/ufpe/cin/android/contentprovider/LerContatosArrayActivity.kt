@@ -14,13 +14,25 @@ class LerContatosArrayActivity : ListActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        val contentResolver = getContentResolver()
-        val columns = arrayOf<String>(ContactsContract.Contacts.DISPLAY_NAME)
+        //pegando referência pro content resolver
+        //val contentResolver = contentResolver
+        //getContentResolver()
+
+        //que tipo de informação estamos pegando
+        val columns = arrayOf<String>(
+            ContactsContract.Contacts.DISPLAY_NAME
+        )
+
         //se nao tem permissao vai dar runtime exception
         val cursor = contentResolver.query(
                 ContactsContract.Contacts.CONTENT_URI,
                 columns,
-                null, null, null)
+                null,
+            null,
+            null)
+
+
+
         Log.v("IF710", "QTDE: " + cursor.getCount())
 
         val contacts = ArrayList<String>()

@@ -16,7 +16,9 @@ class LerContatosCursorActivity : ListActivity() {
         //nao tem setContentView
         val contentResolver = getContentResolver()
         val contactsURI = ContactsContract.Contacts.CONTENT_URI
-        val colunas = arrayOf<String>(ContactsContract.Contacts._ID, ContactsContract.Contacts.DISPLAY_NAME)
+        val colunas = arrayOf<String>(
+            ContactsContract.Contacts._ID, ContactsContract.Contacts.DISPLAY_NAME
+        )
 
         val where = "((" + ContactsContract.Contacts.DISPLAY_NAME + " NOTNULL) AND " +
                 "(" + ContactsContract.Contacts.DISPLAY_NAME + " != '' ) AND " +
@@ -26,7 +28,8 @@ class LerContatosCursorActivity : ListActivity() {
 
         //se nao tem permissao vai dar runtime exception
         val c = contentResolver.query(
-                contactsURI, colunas,
+                contactsURI,
+                colunas,
                 where,
                 whereArgs,
                 sortOrder
@@ -36,7 +39,12 @@ class LerContatosCursorActivity : ListActivity() {
         val to = intArrayOf(R.id.contactName)
 
         val adapter = SimpleCursorAdapter(
-                this, R.layout.contact, c, from, to, 0)
+                this,
+                R.layout.contact,
+                c,
+                from,
+                to,
+            0)
 
         setListAdapter(adapter)
     }
